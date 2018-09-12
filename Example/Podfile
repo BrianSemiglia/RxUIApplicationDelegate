@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'RxUIApplicationDelegate_Example' do
+  pod 'RxUIApplicationDelegate', :path => '../'
+
+  target 'RxUIApplicationDelegate_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
