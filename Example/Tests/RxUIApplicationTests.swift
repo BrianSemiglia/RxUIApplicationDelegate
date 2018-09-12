@@ -1281,7 +1281,11 @@ class RxUIApplicationTestCase: XCTestCase {
       [
         RxUIApplicationDelegate.Model.BackgroundTask(
           name: "x",
-          state: .progressing(1)
+          state: .progressing(
+            UIBackgroundTaskIdentifier(
+              rawValue: 1
+            )
+          )
         )
       ]
     )
@@ -1292,7 +1296,7 @@ class RxUIApplicationTestCase: XCTestCase {
     y.backgroundTasks = [
       RxUIApplicationDelegate.Model.BackgroundTask(
         name: "x",
-        state: .complete(1)
+        state: .complete(UIBackgroundTaskIdentifier(rawValue: 1))
       )
     ]
     XCTAssertEqual(
@@ -1431,16 +1435,34 @@ class RxUIApplicationTestCase: XCTestCase {
   }
   
   func testCompletedBackgroundIDs() {
-    let x = [RxUIApplicationDelegate.Model.BackgroundTask(name: "x", state: .complete(2017))]
+    let x = [
+      RxUIApplicationDelegate.Model.BackgroundTask(
+        name: "x",
+        state: .complete(
+          UIBackgroundTaskIdentifier(
+            rawValue: 2017
+          )
+        )
+      )
+    ]
     let z = x.compactMap { $0.ID }
-    XCTAssertEqual(z, [2017])
+    XCTAssertEqual(z, [UIBackgroundTaskIdentifier(rawValue: 2017)])
   }
   
   func testDeletedBackgroundTaskIDs() {
-    let x = [RxUIApplicationDelegate.Model.BackgroundTask(name: "x", state: .progressing(2017))]
+    let x = [
+      RxUIApplicationDelegate.Model.BackgroundTask(
+        name: "x",
+        state: .progressing(
+          UIBackgroundTaskIdentifier(
+            rawValue: 2017
+          )
+        )
+      )
+    ]
     let y: [RxUIApplicationDelegate.Model.BackgroundTask] = []
     let z = RxUIApplicationDelegate.deletions(old: x, new: y).compactMap { $0.ID }
-    XCTAssertEqual(z, [2017])
+    XCTAssertEqual(z, [UIBackgroundTaskIdentifier(rawValue: 2017)])
   }
 
   struct ErrorStub: Error, Equatable {
