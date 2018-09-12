@@ -373,7 +373,7 @@ public class RxUIApplicationDelegate: NSObject, UIApplicationDelegate {
   
   fileprivate let application: UIApplication
   fileprivate let cleanup = DisposeBag()
-  fileprivate let output: BehaviorSubject<Model>
+  public let output: BehaviorSubject<Model>
   fileprivate var model: Model
 
   public init(initial: Model) {
@@ -382,7 +382,7 @@ public class RxUIApplicationDelegate: NSObject, UIApplicationDelegate {
     output = BehaviorSubject<Model>(value: initial)
   }
   
-  func render(new: Model, old: Model) {
+  public func render(new: Model, old: Model) {
     model = new
     if model.isIgnoringUserEvents != old.isIgnoringUserEvents {
       model.isIgnoringUserEvents
