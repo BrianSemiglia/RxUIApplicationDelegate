@@ -1,35 +1,20 @@
-#
-# Be sure to run `pod lib lint RxUIApplicationDelegate.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'RxUIApplicationDelegate'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of RxUIApplicationDelegate.'
+  s.summary          = 'UIApplicationDelegate with a declarative input/output interface.'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = 'RxUIApplicationDelegate serves as an application delegate while providing a declarative means of input (render(model: Model)) and output (RxSwift.Observable<Model>).'
 
   s.homepage         = 'https://github.com/brian.semiglia@gmail.com/RxUIApplicationDelegate'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  # s.screenshots    = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'brian.semiglia@gmail.com' => 'brian.semiglia@gmail.com' }
-  s.source           = { :git => 'https://github.com/brian.semiglia@gmail.com/RxUIApplicationDelegate.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  s.source           = {
+    :git => 'https://github.com/briansemiglia/RxUIApplicationDelegate.git',
+    :tag => s.version.to_s
+  }
+  s.social_media_url = 'https://twitter.com/brians_'
   s.ios.deployment_target = '9.0'
-
   s.source_files = 'RxUIApplicationDelegate/Classes/**/*'
   
   # s.resource_bundles = {
@@ -40,5 +25,4 @@ TODO: Add long description of the pod here.
   # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'RxSwift', '~> 4.0'
   s.dependency 'Changeset', '3.1'
-
 end
