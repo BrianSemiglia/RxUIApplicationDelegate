@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxUIApplicationDelegate
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
