@@ -43,7 +43,6 @@ public class RxUIApplicationDelegate: NSObject, UIApplicationDelegate {
     public var scheduledLocalNotifications: [UILocalNotification]
     public var userNotificationSettings: UserNotificationSettingsState
     public var isReceivingRemoteControlEvents: Bool
-    public var newsStandIconImage: UIImage?
     public var shortcutActions: [ShortcutAction]
     public var shouldSaveApplicationState: Filtered<NSCoder, Bool>
     public var shouldRestoreApplicationState: Filtered<NSCoder, Bool>
@@ -304,7 +303,6 @@ public class RxUIApplicationDelegate: NSObject, UIApplicationDelegate {
       scheduledLocalNotifications: [UILocalNotification],
       userNotificationSettings: UserNotificationSettingsState,
       isReceivingRemoteControlEvents: Bool,
-      newsStandIconImage: UIImage?,
       shortcutActions: [ShortcutAction],
       shouldSaveApplicationState: Filtered<
         NSCoder,
@@ -359,7 +357,6 @@ public class RxUIApplicationDelegate: NSObject, UIApplicationDelegate {
       self.scheduledLocalNotifications = scheduledLocalNotifications
       self.userNotificationSettings = userNotificationSettings
       self.isReceivingRemoteControlEvents = isReceivingRemoteControlEvents
-      self.newsStandIconImage = newsStandIconImage
       self.shortcutActions = shortcutActions
       self.shouldSaveApplicationState = shouldSaveApplicationState
       self.shouldRestoreApplicationState = shouldRestoreApplicationState
@@ -602,10 +599,6 @@ public class RxUIApplicationDelegate: NSObject, UIApplicationDelegate {
       model.isReceivingRemoteControlEvents
         ? application.beginReceivingRemoteControlEvents()
         : application.endReceivingRemoteControlEvents()
-    }
-    
-    if old.newsStandIconImage != model.newsStandIconImage {
-      application.setNewsstandIconImage(model.newsStandIconImage)
     }
     
     application.shortcutItems = model.shortcutActions.map { $0.item }
@@ -1211,7 +1204,6 @@ extension RxUIApplicationDelegate.Model: Equatable {
     left.scheduledLocalNotifications == right.scheduledLocalNotifications &&
     left.userNotificationSettings == right.userNotificationSettings &&
     left.isReceivingRemoteControlEvents == right.isReceivingRemoteControlEvents &&
-    left.newsStandIconImage == right.newsStandIconImage &&
     left.shortcutActions == right.shortcutActions &&
     left.shouldSaveApplicationState == right.shouldSaveApplicationState &&
     left.shouldRestoreApplicationState == right.shouldRestoreApplicationState &&
@@ -1346,7 +1338,6 @@ extension RxUIApplicationDelegate.Model {
       scheduledLocalNotifications: [],
       userNotificationSettings: .idle,
       isReceivingRemoteControlEvents: false,
-      newsStandIconImage: nil,
       shortcutActions: [],
       shouldSaveApplicationState: .idle,
       shouldRestoreApplicationState: .idle,
