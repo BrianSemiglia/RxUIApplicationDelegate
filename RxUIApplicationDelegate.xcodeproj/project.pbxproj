@@ -18,6 +18,8 @@
 		D3193AF2214CB4650043E5E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3193AF0214CB4650043E5E0 /* Main.storyboard */; };
 		D3193AF4214CB4670043E5E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3193AF3214CB4670043E5E0 /* Assets.xcassets */; };
 		D3193AF7214CB4670043E5E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3193AF5214CB4670043E5E0 /* LaunchScreen.storyboard */; };
+		D3193AFC214CBEDD0043E5E0 /* RxUIApplicationDelegate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3193AC5214CAB330043E5E0 /* RxUIApplicationDelegate.framework */; };
+		D3193B0A214DA9310043E5E0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3193B09214DA9310043E5E0 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,7 @@
 		D3193AF3214CB4670043E5E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3193AF6214CB4670043E5E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3193AF8214CB4670043E5E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3193B09214DA9310043E5E0 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3193B0A214DA9310043E5E0 /* RxSwift.framework in Frameworks */,
+				D3193AFC214CBEDD0043E5E0 /* RxUIApplicationDelegate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +125,7 @@
 		D3193AE1214CB0FB0043E5E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3193B09214DA9310043E5E0 /* RxSwift.framework */,
 				D3193AE2214CB0FB0043E5E0 /* Changeset.framework */,
 				D3193AE4214CB0FB0043E5E0 /* RxSwift.framework */,
 			);
