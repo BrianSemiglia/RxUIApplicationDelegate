@@ -13,6 +13,11 @@
 		D3193AE0214CAB580043E5E0 /* RxUIApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3193ADF214CAB580043E5E0 /* RxUIApplicationDelegate.swift */; };
 		D3193AE3214CB0FB0043E5E0 /* Changeset.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3193AE2214CB0FB0043E5E0 /* Changeset.framework */; };
 		D3193AE5214CB0FB0043E5E0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3193AE4214CB0FB0043E5E0 /* RxSwift.framework */; };
+		D3193AED214CB4650043E5E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3193AEC214CB4650043E5E0 /* AppDelegate.swift */; };
+		D3193AEF214CB4650043E5E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3193AEE214CB4650043E5E0 /* ViewController.swift */; };
+		D3193AF2214CB4650043E5E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3193AF0214CB4650043E5E0 /* Main.storyboard */; };
+		D3193AF4214CB4670043E5E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3193AF3214CB4670043E5E0 /* Assets.xcassets */; };
+		D3193AF7214CB4670043E5E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3193AF5214CB4670043E5E0 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,13 @@
 		D3193ADF214CAB580043E5E0 /* RxUIApplicationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxUIApplicationDelegate.swift; sourceTree = "<group>"; };
 		D3193AE2214CB0FB0043E5E0 /* Changeset.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Changeset.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3193AE4214CB0FB0043E5E0 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3193AEA214CB4650043E5E0 /* RxUIApplicationDelegateExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxUIApplicationDelegateExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3193AEC214CB4650043E5E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D3193AEE214CB4650043E5E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D3193AF1214CB4650043E5E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D3193AF3214CB4670043E5E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D3193AF6214CB4670043E5E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D3193AF8214CB4670043E5E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +67,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3193AE7214CB4650043E5E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -63,6 +82,7 @@
 			children = (
 				D3193AC7214CAB330043E5E0 /* RxUIApplicationDelegate */,
 				D3193AD2214CAB330043E5E0 /* RxUIApplicationDelegateTests */,
+				D3193AEB214CB4650043E5E0 /* RxUIApplicationDelegateExample */,
 				D3193AC6214CAB330043E5E0 /* Products */,
 				D3193AE1214CB0FB0043E5E0 /* Frameworks */,
 			);
@@ -73,6 +93,7 @@
 			children = (
 				D3193AC5214CAB330043E5E0 /* RxUIApplicationDelegate.framework */,
 				D3193ACE214CAB330043E5E0 /* RxUIApplicationDelegateTests.xctest */,
+				D3193AEA214CB4650043E5E0 /* RxUIApplicationDelegateExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +124,19 @@
 				D3193AE4214CB0FB0043E5E0 /* RxSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3193AEB214CB4650043E5E0 /* RxUIApplicationDelegateExample */ = {
+			isa = PBXGroup;
+			children = (
+				D3193AEC214CB4650043E5E0 /* AppDelegate.swift */,
+				D3193AEE214CB4650043E5E0 /* ViewController.swift */,
+				D3193AF0214CB4650043E5E0 /* Main.storyboard */,
+				D3193AF3214CB4670043E5E0 /* Assets.xcassets */,
+				D3193AF5214CB4670043E5E0 /* LaunchScreen.storyboard */,
+				D3193AF8214CB4670043E5E0 /* Info.plist */,
+			);
+			path = RxUIApplicationDelegateExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +189,23 @@
 			productReference = D3193ACE214CAB330043E5E0 /* RxUIApplicationDelegateTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		D3193AE9214CB4650043E5E0 /* RxUIApplicationDelegateExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3193AF9214CB4670043E5E0 /* Build configuration list for PBXNativeTarget "RxUIApplicationDelegateExample" */;
+			buildPhases = (
+				D3193AE6214CB4650043E5E0 /* Sources */,
+				D3193AE7214CB4650043E5E0 /* Frameworks */,
+				D3193AE8214CB4650043E5E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RxUIApplicationDelegateExample;
+			productName = RxUIApplicationDelegateExample;
+			productReference = D3193AEA214CB4650043E5E0 /* RxUIApplicationDelegateExample.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -172,6 +223,9 @@
 					D3193ACD214CAB330043E5E0 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					D3193AE9214CB4650043E5E0 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 				};
 			};
 			buildConfigurationList = D3193ABF214CAB330043E5E0 /* Build configuration list for PBXProject "RxUIApplicationDelegate" */;
@@ -180,6 +234,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = D3193ABB214CAB330043E5E0;
 			productRefGroup = D3193AC6214CAB330043E5E0 /* Products */;
@@ -188,6 +243,7 @@
 			targets = (
 				D3193AC4214CAB330043E5E0 /* RxUIApplicationDelegate */,
 				D3193ACD214CAB330043E5E0 /* RxUIApplicationDelegateTests */,
+				D3193AE9214CB4650043E5E0 /* RxUIApplicationDelegateExample */,
 			);
 		};
 /* End PBXProject section */
@@ -204,6 +260,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3193AE8214CB4650043E5E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3193AF7214CB4670043E5E0 /* LaunchScreen.storyboard in Resources */,
+				D3193AF4214CB4670043E5E0 /* Assets.xcassets in Resources */,
+				D3193AF2214CB4650043E5E0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +292,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3193AE6214CB4650043E5E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3193AEF214CB4650043E5E0 /* ViewController.swift in Sources */,
+				D3193AED214CB4650043E5E0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -235,6 +310,25 @@
 			targetProxy = D3193AD0214CAB330043E5E0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D3193AF0214CB4650043E5E0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3193AF1214CB4650043E5E0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D3193AF5214CB4670043E5E0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3193AF6214CB4670043E5E0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D3193AD7214CAB330043E5E0 /* Debug */ = {
@@ -446,6 +540,40 @@
 			};
 			name = Release;
 		};
+		D3193AFA214CB4670043E5E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RxUIApplicationDelegateExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.briansemiglia.RxUIApplicationDelegateExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D3193AFB214CB4670043E5E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RxUIApplicationDelegateExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.briansemiglia.RxUIApplicationDelegateExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -472,6 +600,15 @@
 			buildConfigurations = (
 				D3193ADD214CAB330043E5E0 /* Debug */,
 				D3193ADE214CAB330043E5E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3193AF9214CB4670043E5E0 /* Build configuration list for PBXNativeTarget "RxUIApplicationDelegateExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3193AFA214CB4670043E5E0 /* Debug */,
+				D3193AFB214CB4670043E5E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
