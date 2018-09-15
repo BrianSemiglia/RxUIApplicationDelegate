@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Carthage/Checkouts/Changeset/Changeset.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/RxSwift/Rx.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "container:RxUIApplicationDelegate.xcodeproj">
    </FileRef>
 </Workspace>
