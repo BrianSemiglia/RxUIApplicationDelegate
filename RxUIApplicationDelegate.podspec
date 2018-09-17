@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   }
   s.social_media_url = 'https://twitter.com/brians_'
   s.ios.deployment_target = '9.0'
-  s.source_files = 'RxUIApplicationDelegate/Classes/**/*'
-  s.dependency 'RxSwift', '~> 4.0'
+  s.source_files = 'Core/**/*'
+  s.dependency 'RxSwift', '~> 4.2.0'
   s.dependency 'Changeset', '3.1'
 end
