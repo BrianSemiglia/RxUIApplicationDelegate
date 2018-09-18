@@ -48,7 +48,7 @@ public class RxUIApplicationDelegate: NSObject, UIApplicationDelegate {
     public var shouldRestoreApplicationState: Filtered<NSCoder, Bool>
     public var shouldLaunch: Bool
     public var urlActionIncoming: Filtered<RxUIApplicationDelegate.Model.URLLaunch, URL>
-    public var extensionPointIdentifier: Filtered<UIApplicationExtensionPointIdentifier, UIApplicationExtensionPointIdentifier>
+    public var extensionPointIdentifier: Filtered<UIApplication.ExtensionPointIdentifier, UIApplication.ExtensionPointIdentifier>
     public var interfaceOrientations: [Filtered<UIWindow, WindowResponse>]
     public var viewControllerRestoration: Filtered<RestorationQuery, RestorationResponse>
     
@@ -65,7 +65,7 @@ public class RxUIApplicationDelegate: NSObject, UIApplicationDelegate {
     }
     public enum URLLaunch {
       case ios4(url: URL, app: String?, annotation: Any)
-      case ios9(url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
+      case ios9(url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
     }
     public enum Notification {
       case local(value: UILocalNotification)
@@ -184,7 +184,7 @@ public class RxUIApplicationDelegate: NSObject, UIApplicationDelegate {
     public enum UserActivityState { // Readonly
       case idle
       case willContinue(String)
-      case isContinuing(NSUserActivity, restoration: ([UIResponder]?) -> Void)
+      case isContinuing(NSUserActivity, restoration: ([UIUserActivityRestoring]?) -> Void)
       case hasAvailableData(NSUserActivity)
       case shouldNotifyUserActivitiesWithType(String)
       case completing(NSUserActivity)
@@ -204,7 +204,7 @@ public class RxUIApplicationDelegate: NSObject, UIApplicationDelegate {
         case resigned
         case terminated
         public enum Count {
-          case first([UIApplicationLaunchOptionsKey: Any]?)
+          case first([UIApplication.LaunchOptionsKey: Any]?)
           case some
         }
       }
@@ -318,8 +318,8 @@ public class RxUIApplicationDelegate: NSObject, UIApplicationDelegate {
         URL
       >,
       extensionPointIdentifier: Filtered<
-        UIApplicationExtensionPointIdentifier,
-        UIApplicationExtensionPointIdentifier
+        UIApplication.ExtensionPointIdentifier,
+        UIApplication.ExtensionPointIdentifier
       >,
       interfaceOrientations: [Filtered<UIWindow, WindowResponse>],
       viewControllerRestoration: Filtered<
@@ -475,7 +475,7 @@ public class RxUIApplicationDelegate: NSObject, UIApplicationDelegate {
         $0.state == .pending
       }
       .map { task in
-        var ID: UIBackgroundTaskIdentifier = 0
+        var ID: UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier(rawValue: 0)
         ID = application.beginBackgroundTask( // SIDE EFFECT!
           withName: task.name,
           expirationHandler: { [weak self] in
@@ -667,7 +667,7 @@ public class RxUIApplicationDelegate: NSObject, UIApplicationDelegate {
 
   public func application(
     _ application: UIApplication,
-    willFinishLaunchingWithOptions options: [UIApplicationLaunchOptionsKey : Any]? = nil
+    willFinishLaunchingWithOptions options: [UIApplication.LaunchOptionsKey : Any]? = nil
   ) -> Bool {
     model.session.state = .pre(.active(.first(options)))
     output.on(.next(model))
@@ -676,7 +676,7 @@ public class RxUIApplicationDelegate: NSObject, UIApplicationDelegate {
 
   public func application(
     _ application: UIApplication,
-    didFinishLaunchingWithOptions options: [UIApplicationLaunchOptionsKey : Any]? = nil
+    didFinishLaunchingWithOptions options: [UIApplication.LaunchOptionsKey : Any]? = nil
   ) -> Bool {
     model.session.state = .currently(.active(.first(options)))
     output.on(.next(model))
@@ -717,7 +717,7 @@ public class RxUIApplicationDelegate: NSObject, UIApplicationDelegate {
   public func application(
     _ application: UIApplication,
     open url: URL,
-    options: [UIApplicationOpenURLOptionsKey : Any] = [:]
+    options: [UIApplication.OpenURLOptionsKey : Any] = [:]
   ) -> Bool {
     model.urlActionIncoming = .considering(.ios9(url: url, options: options))
     output.on(.next(model))
@@ -995,7 +995,7 @@ public class RxUIApplicationDelegate: NSObject, UIApplicationDelegate {
 
   public func application(
     _ application: UIApplication,
-    shouldAllowExtensionPointIdentifier ID: UIApplicationExtensionPointIdentifier
+    shouldAllowExtensionPointIdentifier ID: UIApplication.ExtensionPointIdentifier
   ) -> Bool {
     model.extensionPointIdentifier = .considering(ID)
     output.on(.next(model))
@@ -1008,10 +1008,10 @@ public class RxUIApplicationDelegate: NSObject, UIApplicationDelegate {
 
   public func application(
     _ application: UIApplication,
-    viewControllerWithRestorationIdentifierPath components: [Any],
+    viewControllerWithRestorationIdentifierPath components: [String],
     coder: NSCoder
   ) -> UIViewController? {
-    if let component = components.last as? String {
+    if let component = components.last {
       model.viewControllerRestoration = .considering(
         RxUIApplicationDelegate.Model.RestorationQuery(
           identifier: component,
@@ -1081,11 +1081,11 @@ public class RxUIApplicationDelegate: NSObject, UIApplicationDelegate {
   public func application(
     _ application: UIApplication,
     continue userActivity: NSUserActivity,
-    restorationHandler: @escaping ([Any]?) -> Void
+    restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void
   ) -> Bool {
     model.userActivityState = .isContinuing(
       userActivity,
-      restoration: { restorationHandler($0.map { [$0 as Any] }) }
+      restoration: restorationHandler
     )
     output.on(.next(model))
     if case .hasAvailableData(let confirmed) = model.userActivityState {
@@ -1817,9 +1817,9 @@ extension RxUIApplicationDelegate.Model.BackgroundFetch.Interval {
   func asUIApplicationBackgroundFetchInterval() -> TimeInterval {
     switch self {
     case .minimum:
-      return UIApplicationBackgroundFetchIntervalMinimum
+      return UIApplication.backgroundFetchIntervalMinimum
     case .never:
-      return UIApplicationBackgroundFetchIntervalNever
+      return UIApplication.backgroundFetchIntervalNever
     case .some(let value):
       return value
     }
