@@ -18,8 +18,9 @@
 		D3193AF2214CB4650043E5E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3193AF0214CB4650043E5E0 /* Main.storyboard */; };
 		D3193AF4214CB4670043E5E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3193AF3214CB4670043E5E0 /* Assets.xcassets */; };
 		D3193AF7214CB4670043E5E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3193AF5214CB4670043E5E0 /* LaunchScreen.storyboard */; };
-		D3193AFC214CBEDD0043E5E0 /* RxUIApplicationDelegate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3193AC5214CAB330043E5E0 /* RxUIApplicationDelegate.framework */; };
 		D3193B0A214DA9310043E5E0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3193B09214DA9310043E5E0 /* RxSwift.framework */; };
+		D33DAF092152149800545266 /* RxUIApplicationDelegate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3193AC5214CAB330043E5E0 /* RxUIApplicationDelegate.framework */; };
+		D33DAF0A2152149800545266 /* RxUIApplicationDelegate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3193AC5214CAB330043E5E0 /* RxUIApplicationDelegate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +31,28 @@
 			remoteGlobalIDString = D3193AC4214CAB330043E5E0;
 			remoteInfo = RxUIApplicationDelegate;
 		};
+		D33DAF0B2152149800545266 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3193ABC214CAB330043E5E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3193AC4214CAB330043E5E0;
+			remoteInfo = RxUIApplicationDelegate;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D33DAF0D2152149800545266 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D33DAF0A2152149800545266 /* RxUIApplicationDelegate.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D3193AC5214CAB330043E5E0 /* RxUIApplicationDelegate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxUIApplicationDelegate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,8 +96,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D33DAF092152149800545266 /* RxUIApplicationDelegate.framework in Frameworks */,
 				D3193B0A214DA9310043E5E0 /* RxSwift.framework in Frameworks */,
-				D3193AFC214CBEDD0043E5E0 /* RxUIApplicationDelegate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,10 +225,12 @@
 				D3193AE7214CB4650043E5E0 /* Frameworks */,
 				D3193AE8214CB4650043E5E0 /* Resources */,
 				D353F54B214DAFA600B95E69 /* ShellScript */,
+				D33DAF0D2152149800545266 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D33DAF0C2152149800545266 /* PBXTargetDependency */,
 			);
 			name = RxUIApplicationDelegateExample;
 			productName = RxUIApplicationDelegateExample;
@@ -335,6 +359,11 @@
 			isa = PBXTargetDependency;
 			target = D3193AC4214CAB330043E5E0 /* RxUIApplicationDelegate */;
 			targetProxy = D3193AD0214CAB330043E5E0 /* PBXContainerItemProxy */;
+		};
+		D33DAF0C2152149800545266 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3193AC4214CAB330043E5E0 /* RxUIApplicationDelegate */;
+			targetProxy = D33DAF0B2152149800545266 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -570,6 +599,7 @@
 		D3193AFA214CB4670043E5E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RxUIApplicationDelegateExample/Info.plist;
@@ -588,6 +618,7 @@
 		D3193AFB214CB4670043E5E0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RxUIApplicationDelegateExample/Info.plist;
