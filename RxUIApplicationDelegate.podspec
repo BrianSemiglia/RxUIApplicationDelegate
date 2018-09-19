@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RxUIApplicationDelegate'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'UIApplicationDelegate with a declarative input/output interface.'
   s.description      = 'RxUIApplicationDelegate serves as an application delegate while providing declarative input/output.'
   s.homepage         = 'https://github.com/briansemiglia/RxUIApplicationDelegate'
